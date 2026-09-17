@@ -1,6 +1,8 @@
 import 'package:expenxe_trakcer/addexpensepage.dart';
 import 'package:expenxe_trakcer/addincomepage.dart';
 import 'package:flutter/material.dart';
+import 'variable.dart';
+
 
 class Addpage extends StatefulWidget {
   const Addpage({super.key});
@@ -35,14 +37,14 @@ class _AddpageState extends State<Addpage> {
             height: 100,width: 165,
             padding: EdgeInsets.all(7),
             decoration:BoxDecoration(borderRadius: BorderRadius.circular(20),
-            color:Color.fromARGB(255, 109, 155, 150)),
+            color:Color.fromARGB(255, 185, 221, 221)),
             child: MaterialButton(onPressed: (){
                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Addincomepage()));
                     },
                     child:Column(children: [
-                    Icon(Icons.card_giftcard,color:Colors.white,size: 30,),
+                    Icon(Icons.card_giftcard,color:Color.fromARGB(255, 2, 80, 87),size: 30,),
                     SizedBox(height: 10,),
-                    Text("Add Income",style:TextStyle(fontSize:20,color:Colors.white,fontWeight: FontWeight.bold))
+                    Text("Add Income",style:TextStyle(fontSize:20,color:Color.fromARGB(255, 2, 80, 87),fontWeight: FontWeight.bold))
           ],))), 
 
           SizedBox(width:19),
@@ -51,14 +53,14 @@ class _AddpageState extends State<Addpage> {
             height: 100,width: 165,
             padding: EdgeInsets.all(7),
             decoration:BoxDecoration(borderRadius: BorderRadius.circular(20),
-            color:Color.fromARGB(255, 109, 155, 150)),
+            color:Color.fromARGB(255, 185, 221, 221),),
             child: MaterialButton(onPressed: (){
                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Addexpensepage()));
             },
                child:Column(children: [
-                    Icon(Icons.card_giftcard,color:Colors.white,size: 30,),
+                    Icon(Icons.card_giftcard,color:Color.fromARGB(255, 2, 80, 87),size: 30,),
                     SizedBox(height: 10,),
-                    Text("Add Expense",style:TextStyle(fontSize: 20,color:Colors.white,fontWeight: FontWeight.bold))
+                    Text("Add Expense",style:TextStyle(fontSize: 20,color:Color.fromARGB(255, 2, 80, 87),fontWeight: FontWeight.bold))
           ],))), 
         ],),
 
@@ -69,7 +71,93 @@ class _AddpageState extends State<Addpage> {
           alignment: Alignment.centerLeft,
           child: Text("Last Added",
                       style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color:Color.fromARGB(255, 2, 80, 87))),
-        )
+        ),
+
+
+         Expanded(
+  child: ListView.builder(
+    itemCount: Transactions.length,
+    itemBuilder: (context, index) {
+      final transaction = Transactions[index];
+      final isIncome = transaction['type'] == 'income';
+
+      return Card(
+        margin: const EdgeInsets.symmetric(
+          horizontal: 4,
+          vertical: 6,
+        ),
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Row(
+            children: [
+              // الأيقونة
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 185, 221, 221),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  isIncome
+                      ? Icons.arrow_circle_down
+                      : Icons.arrow_circle_up,
+                  color: isIncome
+                      ? Color.fromARGB(255, 21, 86, 86)
+                      : Colors.red,
+                ),
+              ),
+
+              const SizedBox(width: 15),
+
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      transaction['title'].toString(),
+                      style:  TextStyle(
+                        color:Color.fromARGB(255, 21, 86, 86),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      transaction['category'].toString(),
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              // المبلغ
+              Text(
+                '${transaction['amount']}',
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: isIncome
+                      ? Color.fromARGB(255, 21, 86, 86)
+                      : Colors.red,
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  ),
+),
+
 
 
 

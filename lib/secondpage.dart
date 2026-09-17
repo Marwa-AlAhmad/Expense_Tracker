@@ -14,16 +14,21 @@ class Secondpage extends StatefulWidget {
 
 class _SecondpageState extends State<Secondpage> {
   int currentIndex=0;
-  final List<Widget> pages =[ Homepage(),
-                             Overviewpage(),
-                             Cardpage(),
-                             Profilepage() ];
+
+List<Widget> get pages => [
+  Homepage(),
+  Overviewpage(),
+  Cardpage(),
+  Profilepage(),
+];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () { 
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>Addpage()));
+          Navigator.push(context, MaterialPageRoute( builder: (context) => Addpage(), ),).then((value) { setState(() {});});
+          // Navigator.push(context, MaterialPageRoute(builder: (context)=>Addpage()));
          },
         backgroundColor: Color.fromARGB(255, 68, 149, 148), 
         shape: const CircleBorder(), 

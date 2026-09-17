@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'variable.dart';
 
 
 class Addincomepage extends StatefulWidget {
@@ -10,7 +11,9 @@ class Addincomepage extends StatefulWidget {
 
 class _AddincomepageState extends State<Addincomepage> {
 
-  final TextEditingController textEditingController = TextEditingController();
+    final TextEditingController textEditingController1 = TextEditingController();
+    final TextEditingController textEditingController2 = TextEditingController();
+
   Set<String> _selectedOption = {'Salary'}; 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +63,7 @@ class _AddincomepageState extends State<Addincomepage> {
           
           
           TextField(
-            controller: textEditingController,
+            controller: textEditingController1,
             // keyboardType: ,
             decoration:InputDecoration(
             hintText: "Enter the sourse of funds",
@@ -80,12 +83,13 @@ class _AddincomepageState extends State<Addincomepage> {
           
           
           TextField(
-            controller: textEditingController,
-            // keyboardType: ,
+            controller: textEditingController2,
+            keyboardType:TextInputType.number,
             decoration:InputDecoration(
             hintText: "Enter amount",
             border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
+            
               ))
           ),
 
@@ -123,6 +127,7 @@ class _AddincomepageState extends State<Addincomepage> {
          selectedForegroundColor: Colors.white,
          backgroundColor: Colors.white,
 
+
          padding: EdgeInsets.symmetric(horizontal: 25,vertical:25)
          )     
        ),
@@ -135,6 +140,18 @@ class _AddincomepageState extends State<Addincomepage> {
       width: double.infinity,
       height: 70,
        child: MaterialButton(onPressed: () { 
+        total+=double.parse(textEditingController2.text);
+        income+=double.parse(textEditingController2.text);
+
+        Transactions.add({'title':textEditingController1.text,
+        'amount':double.parse(textEditingController2.text),
+        'category':_selectedOption,
+        'type':"income",
+
+        });
+        setState(() {
+          
+        });
          },
        child:Text("Add Income",style:TextStyle(color:Colors.white,fontSize: 25)),
        color: Color.fromARGB(255, 21, 86, 86),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'variable.dart';
 
 
 class Addexpensepage extends StatefulWidget {
@@ -10,6 +11,7 @@ class Addexpensepage extends StatefulWidget {
 
 class _AddexpensepageState extends State<Addexpensepage> {
 
+  final TextEditingController textEditingController1 = TextEditingController();
   final TextEditingController textEditingController2 = TextEditingController();
   Set<String> _selectedOption2 = {'Bills'}; 
   @override
@@ -62,7 +64,7 @@ class _AddexpensepageState extends State<Addexpensepage> {
             
             
             TextField(
-              controller: textEditingController2,
+              controller: textEditingController1,
               // keyboardType: ,
               decoration:InputDecoration(
               hintText: "Enter the sourse of funds",
@@ -83,7 +85,7 @@ class _AddexpensepageState extends State<Addexpensepage> {
             
             TextField(
               controller: textEditingController2,
-              // keyboardType: ,
+              keyboardType:TextInputType.number,
               decoration:InputDecoration(
               hintText: "Enter amount",
               border: OutlineInputBorder(
@@ -137,7 +139,17 @@ class _AddexpensepageState extends State<Addexpensepage> {
                 width: double.infinity,
                 height: 70,
                  child: MaterialButton(onPressed: () { 
-           },
+                  total-=double.parse(textEditingController2.text);
+                  expense+=double.parse(textEditingController2.text);
+
+                  Transactions.add({'title':textEditingController1.text,
+               'amount':double.parse(textEditingController2.text),
+               'category':_selectedOption2,
+               'type':'expense',
+                   });
+                   setState(() {     
+                  });
+                  },      
                  child:Text("Add Espense",style:TextStyle(color:Colors.white,fontSize: 25)),
                  color: Color.fromARGB(255, 21, 86, 86),
                  shape: RoundedRectangleBorder(

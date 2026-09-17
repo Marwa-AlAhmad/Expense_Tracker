@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'variable.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -8,8 +9,9 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-   double total=0;
-  double expense=0;
+  // double total=0;
+  // double expense=0;
+  // double income=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,21 +60,39 @@ class _HomepageState extends State<Homepage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [         
-                Text("Total Balance:",style:TextStyle(color:Colors.white,fontSize: 20)),
+                Text("Total Balance:",style:TextStyle(color:Colors.white,fontSize: 30)),
                 Icon(Icons.more_horiz,color:Colors.white,size:30,)
           ]),
 
           Row(
             children: [
               SizedBox(width:60,),
-              Text("$total",style:TextStyle(fontSize:45,color:Colors.white),),
+              Text("$total",style:TextStyle(fontSize:30,color:Colors.white),),
             ],
           ),
 
+        SizedBox(height: 10,),
+
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,children:[
-            Text("Expense: $expense",style:TextStyle(color:Colors.white,fontSize: 17)),
-            Icon(Icons.arrow_circle_down,color:Colors.white,size:25,)
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children:[
+              Column(children: [  
+                Row(children: [
+                   Icon(Icons.arrow_circle_down,color:Colors.white,size:25,),
+                   SizedBox(width: 10,),
+                   Text("Expense:\n $expense",style:TextStyle(color:Colors.white,fontSize: 18)),
+              
+                ]),
+              ]),
+
+               Column(children: [   
+                Row(children:[
+                  Icon(Icons.arrow_circle_down,color:Colors.white,size:25,),
+                  SizedBox(width: 10,),
+                  Text("InCome:\n $income",style:TextStyle(color:Colors.white,fontSize: 18)),
+               
+                ]),
+              ]),
 
           ]),
 
@@ -80,7 +100,7 @@ class _HomepageState extends State<Homepage> {
            Row(
             children: [
               SizedBox(width:60,),
-              Text("$expense",style:TextStyle(fontSize:30,color:Colors.white),),
+              // Text("$expense",style:TextStyle(fontSize:30,color:Colors.white),),
             ],
           ),
         ],)
@@ -100,6 +120,88 @@ class _HomepageState extends State<Homepage> {
         ),
       ),
 
+    Expanded(
+  child: ListView.builder(
+    itemCount: Transactions.length,
+    itemBuilder: (context, index) {
+      final transaction = Transactions[index];
+      final isIncome = transaction['type'] == 'income';
+
+      return Card(
+        margin: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 6,
+        ),
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Row(
+            children: [
+              // الأيقونة
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 185, 221, 221),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  isIncome
+                      ? Icons.arrow_circle_down
+                      : Icons.arrow_circle_up,
+                  color: isIncome
+                      ? Color.fromARGB(255, 2, 80, 87)
+                      : Colors.red,
+                ),
+              ),
+
+              const SizedBox(width: 15),
+
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      transaction['title'].toString(),
+                      style:  TextStyle(
+                       color:Color.fromARGB(255, 2, 80, 87),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      transaction['category'].toString(),
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              // المبلغ
+              Text(
+                '${transaction['amount']}',
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: isIncome
+                      ? Color.fromARGB(255, 2, 80, 87)
+                      : Colors.red,
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  ),
+),
 
 
 
