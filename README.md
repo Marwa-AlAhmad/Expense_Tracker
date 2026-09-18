@@ -1,17 +1,19 @@
-# expenxe_trakcer
+# Expense Tracker
 
-A new Flutter project.
+A simple Flutter practice app for tracking income and expenses.
 
-## Getting Started
+**About the App**
+*This app allows users to:*
 
-This project is a starting point for a Flutter application.
+- Add income and espenses
+- Calculate the total.
+- View a list of saved transactions.
+- Keep track of their financial acitvities.
 
-A few resources to get you started if this is your first Flutter project:
+**Technologies:**
+- Dart
+- Flutter
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**About This Project:**
+This project was created as a practice project while learning Flutter and applying basic Flutter concepts.
+  
