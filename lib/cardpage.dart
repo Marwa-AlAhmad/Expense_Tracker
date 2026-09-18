@@ -11,6 +11,7 @@ class _CardpageState extends State<Cardpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 207, 227, 227),
       body:Column(children: [
         SizedBox(height: 60,),
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'variable.dart';
+import 'storage.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -9,12 +10,22 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  // double total=0;
-  // double expense=0;
-  // double income=0;
   @override
+  void initState() {
+   super.initState();
+   loadData();
+  }
+
+Future<void> loadData() async {
+  await loadTransactions();
+  calculateTotals();
+  setState(() {});
+}
+
+
   Widget build(BuildContext context) {
     return Scaffold(
+    backgroundColor: Color.fromARGB(255, 207, 227, 227),
       
 
     body:Column(children: [
@@ -28,7 +39,8 @@ class _HomepageState extends State<Homepage> {
         
           Icon(Icons.grid_view,size: 30,color:Color.fromARGB(255, 2, 80, 87)),
 
-          Text("Home",style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color:Color.fromARGB(255, 2, 80, 87))),
+          Text("Home",style:TextStyle(fontSize: 30,fontFamily: "Gravitas",
+          fontWeight: FontWeight.bold,color:Color.fromARGB(255, 2, 80, 87))),
 
           Icon(Icons.notifications,size: 30,color:Color.fromARGB(255, 2, 80, 87))
 

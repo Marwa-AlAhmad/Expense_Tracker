@@ -10,6 +10,8 @@ class Overviewpage extends StatefulWidget {
 class _OverviewpageState extends State<Overviewpage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 207, 227, 227),
+    );
   }
 }

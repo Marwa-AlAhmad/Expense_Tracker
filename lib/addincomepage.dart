@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'variable.dart';
+import 'storage.dart';
 
 
 class Addincomepage extends StatefulWidget {
@@ -18,6 +19,7 @@ class _AddincomepageState extends State<Addincomepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 220, 241, 241),
       body:Padding(
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
@@ -136,19 +138,20 @@ class _AddincomepageState extends State<Addincomepage> {
        SizedBox(height:45),
 
 
-       SizedBox(
+      SizedBox(
       width: double.infinity,
       height: 70,
-       child: MaterialButton(onPressed: () { 
+       child: MaterialButton(onPressed: () async { 
         total+=double.parse(textEditingController2.text);
         income+=double.parse(textEditingController2.text);
 
         Transactions.add({'title':textEditingController1.text,
         'amount':double.parse(textEditingController2.text),
-        'category':_selectedOption,
+        'category':_selectedOption.first,
         'type':"income",
 
         });
+        await saveTransactions();
         setState(() {
           
         });

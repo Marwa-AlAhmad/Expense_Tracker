@@ -15,6 +15,7 @@ class _AddpageState extends State<Addpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    backgroundColor: Color.fromARGB(255, 207, 227, 227),
     body:Padding(
       padding: const EdgeInsets.all(20),
       child: Column(children: [
@@ -37,14 +38,14 @@ class _AddpageState extends State<Addpage> {
             height: 100,width: 165,
             padding: EdgeInsets.all(7),
             decoration:BoxDecoration(borderRadius: BorderRadius.circular(20),
-            color:Color.fromARGB(255, 185, 221, 221)),
+            color:Color.fromARGB(255, 2, 80, 87)),
             child: MaterialButton(onPressed: (){
                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Addincomepage()));
                     },
                     child:Column(children: [
-                    Icon(Icons.card_giftcard,color:Color.fromARGB(255, 2, 80, 87),size: 30,),
+                    Icon(Icons.card_giftcard,color:Colors.white,size: 30,),
                     SizedBox(height: 10,),
-                    Text("Add Income",style:TextStyle(fontSize:20,color:Color.fromARGB(255, 2, 80, 87),fontWeight: FontWeight.bold))
+                    Text("Add Income",style:TextStyle(fontSize:20,color:Colors.white,fontWeight: FontWeight.bold))
           ],))), 
 
           SizedBox(width:19),
@@ -53,14 +54,14 @@ class _AddpageState extends State<Addpage> {
             height: 100,width: 165,
             padding: EdgeInsets.all(7),
             decoration:BoxDecoration(borderRadius: BorderRadius.circular(20),
-            color:Color.fromARGB(255, 185, 221, 221),),
+            color:Color.fromARGB(255, 2, 80, 87),),
             child: MaterialButton(onPressed: (){
                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Addexpensepage()));
             },
                child:Column(children: [
-                    Icon(Icons.card_giftcard,color:Color.fromARGB(255, 2, 80, 87),size: 30,),
+                    Icon(Icons.card_giftcard,color:Colors.white,size: 30,),
                     SizedBox(height: 10,),
-                    Text("Add Expense",style:TextStyle(fontSize: 20,color:Color.fromARGB(255, 2, 80, 87),fontWeight: FontWeight.bold))
+                    Text("Add Expense",style:TextStyle(fontSize: 20,color:Colors.white,fontWeight: FontWeight.bold))
           ],))), 
         ],),
 

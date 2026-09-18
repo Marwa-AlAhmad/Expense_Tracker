@@ -12,7 +12,32 @@ class _FirstpageState extends State<Firstpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    body:Column(children:[
+      // backgroundColor: Color.fromARGB(255, 207, 227, 227),
+    body:Container(
+      decoration: BoxDecoration(
+      gradient: LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+      Color.fromARGB(255, 132, 178, 178),
+      Color.fromARGB(255, 255, 255, 255), 
+      Color.fromARGB(255, 255, 255, 255), 
+      Color.fromARGB(255, 255, 255, 255), 
+      Color.fromARGB(255, 132, 178, 178),
+
+      // Color.fromARGB(255, 159, 244, 244),
+      // Color.fromARGB(255, 197, 255, 255),
+      // Color.fromARGB(255, 210, 245, 245),
+      //  Color.fromARGB(255, 1, 2, 2),
+      // Color.fromARGB(255, 210, 245, 245),
+      // Color.fromARGB(255, 197, 255, 255),
+      // Color.fromARGB(255, 159, 244, 244),
+      // Color.fromARGB(255, 0, 61, 61),
+      ],
+      ),
+      ),
+
+    child:Column(children:[
 
      SizedBox(height: 100,),
 
@@ -49,17 +74,50 @@ class _FirstpageState extends State<Firstpage> {
      SizedBox(
       width: 170,
       height: 65,
-       child: MaterialButton(onPressed: () { 
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Secondpage()));
-         },
-       child:Text("Let's Start",style:TextStyle(color:Colors.white,fontSize: 20)),
-       color:Color.fromARGB(255, 2, 80, 87),
-       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0), ),
-       
+      child: ElevatedButton(
+       onPressed: () {
+        Navigator.pushReplacement(
+         context,
+         MaterialPageRoute(builder: (context) => Secondpage()),
+        );
+      },
+      style: ElevatedButton.styleFrom(
+      padding: EdgeInsets.zero,
+      elevation: 2, 
+      shape: RoundedRectangleBorder(
+       borderRadius: BorderRadius.circular(20.0),
        ),
      ),
+    child: Ink(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color.fromARGB(255, 7, 48, 48),
+            Color.fromARGB(255, 28, 113, 113),
+            Color.fromARGB(255, 40, 170, 176),
+            Color.fromARGB(255, 70, 214, 212),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(20.0), 
+      ),
+      child: Container(
+        alignment: Alignment.center,
+        child: Text(
+          "Let's Start",
+          style: TextStyle(
+            color: Colors.white, 
+            fontSize: 20,
+            fontWeight: FontWeight.bold, // اختياري: لجعل الخط أوضح
+          ),
+        ),
+      ),
+    ),
+  ),
+),
+
       
-    ]));
+    ])));
   }
 }
