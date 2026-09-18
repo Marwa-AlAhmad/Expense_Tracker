@@ -27,7 +27,7 @@ class _AddpageState extends State<Addpage> {
           },
           icon: Icon(Icons.arrow_back_ios_new_outlined),iconSize: 30,color:Color.fromARGB(255, 2, 80, 87)),
           SizedBox(width: 100,),
-          Text("Add",style:TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color:Color.fromARGB(255, 2, 80, 87)))
+          Text("Add",style:TextStyle(fontSize: 28,fontFamily: "Gravitas",fontWeight: FontWeight.bold,color:Color.fromARGB(255, 2, 80, 87)))
         ],),
 
 

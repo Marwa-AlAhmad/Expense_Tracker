@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:horizontal_weekly_calendar/horizontal_weekly_calendar.dart';
 import 'variable.dart';
 import 'storage.dart';
 
@@ -31,28 +32,39 @@ class _AddincomepageState extends State<Addincomepage> {
               Navigator.pop(context);
               },
               icon: Icon(Icons.arrow_back_ios_new_outlined),iconSize: 30,color:Color.fromARGB(255, 2, 80, 87)),
-              SizedBox(width: 60,),
-              Text("Add Income",style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color:Color.fromARGB(255, 2, 80, 87)))
+              SizedBox(width: 40,),
+              Text("Add Income",style:TextStyle(fontSize: 23,fontFamily: "Gravitas",fontWeight: FontWeight.bold,color:Color.fromARGB(255, 2, 80, 87)))
           ],),
           
           
           SizedBox(height:15),
           
           Container(
+
+          child:HorizontalCalendar<Object?>(
+          selectedDate: DateTime.now(),
+          onDateSelected: (date) {
+              setState(() {});
+          },
+          
+          ),
           height: 170,
           width: 340,
           alignment: Alignment.topLeft,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
-          gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                       Color.fromARGB(255, 7, 48, 48),
-                       Color.fromARGB(255, 21, 86, 86),
-                       Color.fromARGB(255, 28, 135, 141),
-                       Color.fromARGB(255, 70, 214, 212),
-                    ],
-          ),),
+          color:const Color.fromARGB(255, 207, 227, 227),
+          // gradient: LinearGradient(
+          //           begin: Alignment.topLeft,
+          //           end: Alignment.bottomRight,
+          //           colors: [
+          //              Color.fromARGB(255, 7, 48, 48),
+          //              Color.fromARGB(255, 21, 86, 86),
+          //              Color.fromARGB(255, 28, 135, 141),
+          //              Color.fromARGB(255, 70, 214, 212),
+          //           ],
+          // ),
+          ),
+          
           ),
           
           SizedBox(height:30),

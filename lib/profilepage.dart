@@ -15,7 +15,7 @@ class _ProfilepageState extends State<Profilepage> {
       body:Padding(
         padding: const EdgeInsets.all(20),
         child:Column(children: [
-          SizedBox(height: 60,),
+          SizedBox(height: 40,),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -29,35 +29,35 @@ class _ProfilepageState extends State<Profilepage> {
              ]),
 
 
-          SizedBox(height: 40,),
+          SizedBox(height: 20,),
 
           Center(
             child: ClipRRect(
             borderRadius: BorderRadius.circular(150),
             child:Image.asset("images/piccc.png",
-            width: 360,
-            height: 360,
+            width: 200,
+            height: 200,
             fit: BoxFit.cover,),),
           ),
 
-           SizedBox(height: 40,),
+           SizedBox(height: 10,),
 
 
           Text("Marwa AlAhmad",
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 2, 80, 87))
+            style: TextStyle(fontSize: 25,fontFamily: "Gravitas",color: const Color.fromARGB(255, 2, 80, 87))
           ),
 
 
-          SizedBox(height: 40,),
+          // SizedBox(height: 10,),
 
 
           Text("marwa@gmail.com",
                textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 15,fontWeight: FontWeight.w100,color: Colors.grey[200])
+              style: TextStyle(fontSize: 15,fontWeight: FontWeight.w300,color: const Color.fromARGB(255, 19, 18, 18))
           ),
 
-          SizedBox(height: 30,),
+          SizedBox(height: 20,),
 
 
           
@@ -69,7 +69,7 @@ class _ProfilepageState extends State<Profilepage> {
           )),
 
 
-          SizedBox(height: 15,),
+          // SizedBox(height: 15,),
 
 
           Card(child:ListTile(
@@ -79,7 +79,7 @@ class _ProfilepageState extends State<Profilepage> {
             
           )),
 
-          SizedBox(height: 15,),
+          // SizedBox(height: 15,),
 
 
           Card(child:ListTile(
@@ -90,7 +90,7 @@ class _ProfilepageState extends State<Profilepage> {
           )),
 
 
-          SizedBox(height: 15,),
+          // SizedBox(height: 15,),
 
 
           Card(child:ListTile(
@@ -101,7 +101,7 @@ class _ProfilepageState extends State<Profilepage> {
            )),
 
 
-          SizedBox(height: 15,),
+          // SizedBox(height: 15,),
 
 
           Card(child:ListTile(

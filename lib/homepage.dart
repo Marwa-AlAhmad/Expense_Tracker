@@ -72,14 +72,14 @@ Future<void> loadData() async {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [         
-                Text("Total Balance:",style:TextStyle(color:Colors.white,fontSize: 30)),
+                Text("Total Balance:",style:TextStyle(color:Colors.white,fontSize: 33,)),
                 Icon(Icons.more_horiz,color:Colors.white,size:30,)
           ]),
 
           Row(
             children: [
               SizedBox(width:60,),
-              Text("$total",style:TextStyle(fontSize:30,color:Colors.white),),
+              Text("$total",style:TextStyle(fontSize:30,color:Colors.white,fontFamily: "Gravitas",),),
             ],
           ),
 
@@ -128,7 +128,7 @@ Future<void> loadData() async {
         child: Align(
           alignment: Alignment.centerLeft,
          child: Text("Transactions:",
-         style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 2, 80, 87)))
+         style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 2, 80, 87)))
         ),
       ),
 

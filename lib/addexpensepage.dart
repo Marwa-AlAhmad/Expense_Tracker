@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:horizontal_weekly_calendar/horizontal_weekly_calendar.dart';
 import 'variable.dart';
 import 'storage.dart';
 
@@ -30,8 +31,8 @@ class _AddexpensepageState extends State<Addexpensepage> {
               Navigator.pop(context);
               },
               icon: Icon(Icons.arrow_back_ios_new_outlined),iconSize: 30,color:Color.fromARGB(255, 2, 80, 87)),
-              SizedBox(width: 60,),
-              Text("Add Expense",style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color:Color.fromARGB(255, 2, 80, 87)))
+              SizedBox(width: 40,),
+              Text("Add Expense",style:TextStyle(fontSize: 23,fontFamily: "Gravitas",fontWeight: FontWeight.bold,color:Color.fromARGB(255, 2, 80, 87)))
           ],),
           
           
@@ -40,6 +41,12 @@ class _AddexpensepageState extends State<Addexpensepage> {
             SizedBox(height:15),
             
             Container(
+            child:HorizontalCalendar<Object?>(
+            selectedDate: DateTime.now(),
+            onDateSelected: (date) {
+              setState(() {});
+            },
+            ),
             height: 170,
             width: 340,
             alignment: Alignment.topLeft,

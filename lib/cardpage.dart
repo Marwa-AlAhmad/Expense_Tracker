@@ -22,7 +22,7 @@ class _CardpageState extends State<Cardpage> {
         
           Icon(Icons.grid_view,size: 30,color:Color.fromARGB(255, 2, 80, 87)),
 
-          Text("My Card",style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color:Color.fromARGB(255, 2, 80, 87))),
+          Text("My Card",style:TextStyle(fontFamily: "Gravitas",fontSize: 26,fontWeight: FontWeight.bold,color:Color.fromARGB(255, 2, 80, 87))),
 
           Icon(Icons.add,size: 40,color:Color.fromARGB(255, 2, 80, 87))
 
@@ -57,7 +57,7 @@ class _CardpageState extends State<Cardpage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [         
-                    Text("VISA",style:TextStyle(color:Colors.white,fontSize: 45)),
+                    Text("VISA",style:TextStyle(color:Colors.white,fontFamily: "Gravitas",fontSize: 40)),
                     Column(children: [
                       Text("current Balance",style:TextStyle(color:Colors.white,fontSize:15)),
                       SizedBox(height: 6,),
@@ -106,7 +106,7 @@ class _CardpageState extends State<Cardpage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [         
-                    Text("VISA",style:TextStyle(color:Colors.white,fontSize: 45)),
+                    Text("VISA",style:TextStyle(color:Colors.white,fontFamily: "Gravitas",fontSize: 40)),
                     Column(children: [
                       Text("current Balance",style:TextStyle(color:Colors.white,fontSize:15)),
                       SizedBox(height: 6,),
@@ -154,7 +154,7 @@ class _CardpageState extends State<Cardpage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [         
-                    Text("VISA",style:TextStyle(color:Colors.white,fontSize: 45)),
+                    Text("VISA",style:TextStyle(color:Colors.white,fontFamily: "Gravitas",fontSize: 40)),
                     Column(children: [
                       Text("current Balance",style:TextStyle(color:Colors.white,fontSize:15)),
                       SizedBox(height: 6,),
@@ -203,7 +203,7 @@ class _CardpageState extends State<Cardpage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [         
-                    Text("VISA",style:TextStyle(color:Colors.white,fontSize: 45)),
+                    Text("VISA",style:TextStyle(color:Colors.white,fontFamily: "Gravitas",fontSize: 40)),
                     Column(children: [
                       Text("current Balance",style:TextStyle(color:Colors.white,fontSize:15)),
                       SizedBox(height: 6,),
